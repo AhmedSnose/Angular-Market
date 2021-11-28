@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">Shop</a>
+    <button (click)='toggleNavbar()' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" [class.show]='isOpen' id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]={exact:true} routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf='isUser'>
+          <a class="nav-link" routerLinkActive='active' routerLink="/cart">cart</a>
+        </li>
+        <li class="nav-item" *ngIf='!isUser'>
+            <a class="nav-link" routerLinkActive='active' routerLink="/signup">signup</a>
+          </li>
+          <li class="nav-item" *ngIf='!isUser'>
+            <a class="nav-link" routerLinkActive='active' routerLink="/login">login</a>
+          </li>
+          <li class="nav-item" *ngIf='isUser'>
+            <a class="nav-link" routerLinkActive='active' routerLink="/admin">Dashbord</a>
+          </li>
+          <li class="nav-item" *ngIf='isUser'>
+              <button class="btn btn-danger" (click)='logOut()'>Log Out</button>
+          </li>
+      </ul>
+    </div>
+  </nav>

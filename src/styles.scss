@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    overflow-x: hidden;
+}
+.router-container{
+    position: relative;
+}
+
+.router-container > *{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-market-f43a0": {
+      "hosting": {
+        "Cart": [
+          "angular-market-f43a0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-market-f43a0"
+  }
+}

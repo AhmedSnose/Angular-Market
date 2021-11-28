@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12 col-sm-6">
+        <table>
+            <thead>
+                <td>name</td>
+                <td>price</td>
+                <td>Amount</td>
+                <td>Total</td>
+                <td>Option</td>
+            </thead>
+            <tbody>
+                <tr *ngFor='let good of cart; index as i' >
+                    <td>{{good.name}}</td>
+                    <td>{{good.price | currency}}</td>
+                    <td>
+                        <input type="number" [(ngModel)]='good.amount' placeholder="Amount (kg)">
+                    </td>
+                    <!-- <td>{{ (good.price * good.amount) | currency}}</td> Error-->
+                    <td >{{totalPriceitem[i] | currency }}</td> 
+                    
+        
+        
+                    <td>
+                        <button class="btn btn-danger" (click)='save(i)'>save</button>
+                        <button class="btn btn-danger" (click)='delete(i)'>delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
